@@ -135,6 +135,8 @@ cpu-checker
 lxc
 python3
 python3-libvirt
+libpam0g-dev
+python3-pam
 "
 
 if ! apt install -y $PACKAGES; then
@@ -282,6 +284,38 @@ if command -v python3 >/dev/null 2>&1; then
     success "$PYTHON_VERSION"
 else
     die "Python3 was not installed."
+fi
+
+# ------------------------------------------------------------
+# Install Python environment
+# ------------------------------------------------------------
+
+info "Creating Python virtual environment..."
+
+if python3 -m venv .venv; then
+    success "Python virtual environment created."
+else
+    die "Failed to create Python virtual environment."
+fi
+
+info "Activating Python virtual environment..."
+
+. .venv/bin/activate
+
+success "Python virtual environment activated."
+
+# ------------------------------------------------------------
+# Install requirements
+# ------------------------------------------------------------
+
+# ------------------------------------------------------------
+# Install requirements
+# ------------------------------------------------------------
+
+if python -m pip install -r requirements.txt; then
+    success "Python requirements installed."
+else
+    die "Python requirements were not installed!"
 fi
 
 # ------------------------------------------------------------

@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+libvirt-python
+pam
+pydantic
+six
