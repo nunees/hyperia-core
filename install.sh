@@ -1,4 +1,3 @@
-```sh
 #!/bin/sh
 
 # ============================================================
@@ -318,4 +317,3 @@ success "Python libvirt bindings: available"
 echo
 info "Hyperia host dependencies are ready."
 echo
-```
