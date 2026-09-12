@@ -137,6 +137,10 @@ python3
 python3-libvirt
 libpam0g-dev
 python3-pam
+pkg-config
+libvirt-dev
+python3-dev
+build-essential
 "
 
 if ! apt install -y $PACKAGES; then

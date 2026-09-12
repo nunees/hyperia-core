@@ -4,3 +4,4 @@ libvirt-python
 pam
 pydantic
 six
+python3.13-venv

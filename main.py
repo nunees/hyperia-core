@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 
+from VMManager import VMManager
 from auth.authenticate import Authenticate
 
 app = FastAPI(title="Hyperia")
@@ -22,6 +23,4 @@ def auth(data: Authenticate):
 
 @app.get("/api/vms")
 def get_vms():
-    return [
-        {"id": 100, "name": "debian", "status": "running", "cpu": 2, "memory": 2048}
-    ]
+    VMManager.list_vms()

@@ -15,6 +15,8 @@ class VMManager:
                 {"name": domain.name(), "id": domain.ID(), "state": domain.state()[0]}
             )
 
+        return vms
+
     def start_vm(self, name):
       domain = self.connection.lookupByName(name)
       domain.create()
