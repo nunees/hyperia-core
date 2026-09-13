@@ -36,3 +36,4 @@ class QEMUManager:
     def close(self):
         if self.connection:
             self.connection.close()
+
